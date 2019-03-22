@@ -29,8 +29,7 @@ class m190313_122126_init_db extends Migration
             'status'=> $this->string(),
             'created_at'=> $this->integer(),
             'updated_at'=> $this->integer(),
-            'created_by'=> $this->integer(),
-            'updated_by'=> $this->integer(),
+          
 
         ],$tableOptions);
 
@@ -49,8 +48,6 @@ class m190313_122126_init_db extends Migration
             'provinsi'=>$this->string(),
             'created_at'=> $this->integer(),
             'updated_at'=> $this->integer(),
-            'created_by'=> $this->integer(),
-            'updated_by'=> $this->integer(),
         ],$tableOptions);
 
         $this->createTable('{{%seller}}',[
@@ -63,8 +60,6 @@ class m190313_122126_init_db extends Migration
             'status'=> $this->string(),
             'created_at'=> $this->integer(),
             'updated_at'=> $this->integer(),
-            'created_by'=> $this->integer(),
-            'updated_by'=> $this->integer(),
         ], $tableOptions);
 
         $this->createTable('{{%seller_profil}}',[
@@ -90,9 +85,6 @@ class m190313_122126_init_db extends Migration
             'izin_usaha'=> $this->string(),
             'created_at'=> $this->integer(),
             'updated_at'=> $this->integer(),
-            'created_by'=> $this->integer(),
-            'updated_by'=> $this->integer(),
-
         ], $tableOptions);
 
         $this->createTable('{{%user}}',[
@@ -105,8 +97,6 @@ class m190313_122126_init_db extends Migration
             'status'=> $this->string(),
             'created_at'=> $this->integer(),
             'updated_at'=> $this->integer(),
-            'created_by'=> $this->integer(),
-            'updated_by'=> $this->integer(),
         ], $tableOptions);
 
         $this->createTable('{{%user_profil}}',[
@@ -129,8 +119,6 @@ class m190313_122126_init_db extends Migration
             'sim'=> $this->string(),
             'created_at'=> $this->integer(),
             'updated_at'=> $this->integer(),
-            'created_by'=> $this->integer(),
-            'updated_by'=> $this->integer(),
         ], $tableOptions);
 
         $this->createTable('{{%produk}}',[
@@ -151,18 +139,14 @@ class m190313_122126_init_db extends Migration
             'is_nego'=> $this->boolean(),
             'created_at'=> $this->integer(),
             'updated_at'=> $this->integer(),
-            'created_by'=> $this->integer(),
-            'updated_by'=> $this->integer(),
         ], $tableOptions);
 
-        $this->createTable('{{{%detail_produk}}',[
+        $this->createTable('{{%detail_produk}}',[
             'id'=> $this->primaryKey(),
             'id_produk'=> $this->integer(),
             'foto'=> $this->string(),
             'created_at'=> $this->integer(),
             'updated_at'=> $this->integer(),
-            'created_by'=> $this->integer(),
-            'updated_by'=> $this->integer(),
         ], $tableOptions);
 
         $this->createTable('{{%kategori}}',[
@@ -170,11 +154,9 @@ class m190313_122126_init_db extends Migration
             'nama'=> $this->string(),
             'created_at'=> $this->integer(),
             'updated_at'=> $this->integer(),
-            'created_by'=> $this->integer(),
-            'updated_by'=> $this->integer(),
         ], $tableOptions);
 
-        $this->createTable('{{$nego}}',[
+        $this->createTable('{{%nego}}',[
             'id'=> $this->primaryKey(),
             'id_produk'=> $this->integer(),
             'harga_1'=> $this->bigInteger(),
@@ -182,8 +164,6 @@ class m190313_122126_init_db extends Migration
             'harga_3'=> $this->bigInteger(),
             'created_at'=> $this->integer(),
             'updated_at'=> $this->integer(),
-            'created_by'=> $this->integer(),
-            'updated_by'=> $this->integer(),
         ], $tableOptions);
 
         $this->createTable('{{%metode_pembayaran}}',[
@@ -191,8 +171,6 @@ class m190313_122126_init_db extends Migration
             'nama'=> $this->string(),
             'created_at'=> $this->integer(),
             'updated_at'=> $this->integer(),
-            'created_by'=> $this->integer(),
-            'updated_by'=> $this->integer(),
         ], $tableOptions);
 
         $this->createTable('{{%transaksi}}',[
@@ -205,12 +183,10 @@ class m190313_122126_init_db extends Migration
             'status'=> $this->string(),
             'expiration'=> $this->integer(),
             'is_cicilan'=> $this->boolean(),
-            'id_kategori_cicilan'=> $this->boolean(),
+            'id_kategori_cicilan'=> $this->integer(),
             'is_promo'=> $this->boolean(),
             'created_at'=> $this->integer(),
             'updated_at'=> $this->integer(),
-            'created_by'=> $this->integer(),
-            'updated_by'=> $this->integer(),
         ], $tableOptions);
 
         $this->createTable('{{%kategori_cicilan}}',[
@@ -218,8 +194,6 @@ class m190313_122126_init_db extends Migration
             'nama'=> $this->string(),
             'created_at'=> $this->integer(),
             'updated_at'=> $this->integer(),
-            'created_by'=> $this->integer(),
-            'updated_by'=> $this->integer(),
         ], $tableOptions);
 
         $this->createTable('{{%detail_transaksi}}',[
@@ -228,8 +202,6 @@ class m190313_122126_init_db extends Migration
             'id_produk'=> $this->integer(),
             'created_at'=> $this->integer(),
             'updated_at'=> $this->integer(),
-            'created_by'=> $this->integer(),
-            'updated_by'=> $this->integer(),
         ], $tableOptions);
 
         $this->createTable('{{%transaksi_cicilan}}',[
@@ -238,11 +210,9 @@ class m190313_122126_init_db extends Migration
             'tgl_pembayaran'=> $this->integer(),
             'created_at'=> $this->integer(),
             'updated_at'=> $this->integer(),
-            'created_by'=> $this->integer(),
-            'updated_by'=> $this->integer(),
         ], $tableOptions);
 
-        $this->createTable('{{$promo}}',[
+        $this->createTable('{{%promo}}',[
             'id'=> $this->primaryKey(),
             'id_transaksi'=> $this->integer(),
             'promo'=> $this->string(),
@@ -250,14 +220,12 @@ class m190313_122126_init_db extends Migration
             'end_date'=> $this->integer(),
             'created_at'=> $this->integer(),
             'updated_at'=> $this->integer(),
-            'created_by'=> $this->integer(),
-            'updated_by'=> $this->integer(),
         ], $tableOptions);
 
         $this->createTable('{{%request}}',[
             'id'=> $this->primaryKey(),
             'id_user'=> $this->integer(),
-            'id_user'=> $this->integer(),
+            'id_seller'=> $this->integer(),
             'id_kategori'=> $this->integer(),
             'nama_app'=> $this->string(),
             'deskripsi'=> $this->string(),
@@ -266,50 +234,48 @@ class m190313_122126_init_db extends Migration
             'status'=> $this->string(),
             'created_at'=> $this->integer(),
             'updated_at'=> $this->integer(),
-            'created_by'=> $this->integer(),
-            'updated_by'=> $this->integer(),
         ], $tableOptions);
 
         $this->createTable('{{%notifikasi_user}}',[
             'id'=> $this->primaryKey(),
-            'message'=> $this->json(),
+            'message'=> $this->string(),
             'channel'=> $this->string(),
+            'from'=> $this->string(),
+            'action'=> $this->string(),
             'event'=> $this->string(),
             'id_user'=> $this->integer(),
             'is_opened'=> $this->boolean(),
             'is_deleted'=> $this->boolean(),
             'created_at'=> $this->integer(),
             'updated_at'=> $this->integer(),
-            'created_by'=> $this->integer(),
-            'updated_by'=> $this->integer(),
         ], $tableOptions);
 
         $this->createTable('{{%notifikasi_admin}}',[
             'id'=> $this->primaryKey(),
-            'message'=> $this->json(),
+            'message'=> $this->string(),
             'channel'=> $this->string(),
             'event'=> $this->string(),
+            'from'=> $this->string(),
+            'action'=> $this->string(),
             'id_admin'=> $this->integer(),
             'is_opened'=> $this->boolean(),
             'is_deleted'=> $this->boolean(),
             'created_at'=> $this->integer(),
             'updated_at'=> $this->integer(),
-            'created_by'=> $this->integer(),
-            'updated_by'=> $this->integer(),
         ], $tableOptions);
 
         $this->createTable('{{%notifikasi_seller}}',[
             'id'=> $this->primaryKey(),
-            'message'=> $this->json(),
+            'message'=> $this->string(),
             'channel'=> $this->string(),
             'event'=> $this->string(),
+            'from'=> $this->string(),
+            'action'=> $this->string(),
             'id_seller'=> $this->integer(),
             'is_opened'=> $this->boolean(),
             'is_deleted'=> $this->boolean(),
             'created_at'=> $this->integer(),
             'updated_at'=> $this->integer(),
-            'created_by'=> $this->integer(),
-            'updated_by'=> $this->integer(),
         ], $tableOptions);
 
         $this->createTable('{{%profil}}',[
@@ -321,8 +287,6 @@ class m190313_122126_init_db extends Migration
             'how_to'=> $this->string(),
             'created_at'=> $this->integer(),
             'updated_at'=> $this->integer(),
-            'created_by'=> $this->integer(),
-            'updated_by'=> $this->integer(),
         ], $tableOptions);
 
         $this->createTable('{{%rating_comment}}',[
@@ -333,8 +297,6 @@ class m190313_122126_init_db extends Migration
             'comment'=> $this->string(),
             'created_at'=> $this->integer(),
             'updated_at'=> $this->integer(),
-            'created_by'=> $this->integer(),
-            'updated_by'=> $this->integer(),
         ], $tableOptions);
 
         $this->createTable('{{%favorite}}', [
@@ -343,8 +305,6 @@ class m190313_122126_init_db extends Migration
             'id_produk'=> $this->integer(),
             'created_at'=> $this->integer(),
             'updated_at'=> $this->integer(),
-            'created_by'=> $this->integer(),
-            'updated_by'=> $this->integer(),
         ], $tableOptions);
 
         $this->createTable('{{%summary}}',[
@@ -354,8 +314,6 @@ class m190313_122126_init_db extends Migration
             'created_at'=> $this->integer(),
             'notes'=> $this->string(),
             'updated_at'=> $this->integer(),
-            'created_by'=> $this->integer(),
-            'updated_by'=> $this->integer(),
         ], $tableOptions);
     }
 
