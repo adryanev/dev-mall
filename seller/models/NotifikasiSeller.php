@@ -2,6 +2,7 @@
 
 namespace seller\models;
 
+use common\models\Seller;
 use Yii;
 
 /**
