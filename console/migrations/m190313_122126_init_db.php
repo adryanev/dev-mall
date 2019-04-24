@@ -26,7 +26,7 @@ class m190313_122126_init_db extends Migration
             'password_hash'=> $this->string(64),
             'password_reset_token'=> $this->string(),
             'auth_key'=> $this->string(2),
-            'status'=> $this->string(),
+            'status'=> $this->boolean()->defaultValue(0),
             'created_at'=> $this->integer(),
             'updated_at'=> $this->integer(),
           
@@ -57,7 +57,7 @@ class m190313_122126_init_db extends Migration
             'password_hash'=> $this->string(64),
             'password_reset_token'=> $this->string(),
             'auth_key'=> $this->string(2),
-            'status'=> $this->string(),
+            'status'=> $this->boolean()->defaultValue(0),
             'created_at'=> $this->integer(),
             'updated_at'=> $this->integer(),
         ], $tableOptions);
@@ -94,7 +94,7 @@ class m190313_122126_init_db extends Migration
             'password_hash'=> $this->string(64),
             'password_reset_token'=> $this->string(),
             'auth_key'=> $this->string(2),
-            'status'=> $this->string(),
+            'status'=> $this->boolean()->defaultValue(0),
             'created_at'=> $this->integer(),
             'updated_at'=> $this->integer(),
         ], $tableOptions);
@@ -128,7 +128,7 @@ class m190313_122126_init_db extends Migration
             'nama_produk'=> $this->string(),
             'developer'=> $this->string(),
             'harga'=> $this->bigInteger(),
-            'status'=> $this->string(),
+            'status'=> $this->boolean()->defaultValue(0),
             'deskripsi'=> $this->string(),
             'video'=> $this->string(),
             'live_demo'=> $this->string(),
@@ -180,7 +180,7 @@ class m190313_122126_init_db extends Migration
             'id_seller'=> $this->integer(),
             'id_metode_pembayaran'=> $this->integer(),
             'total'=> $this->bigInteger(),
-            'status'=> $this->string(),
+            'status'=> $this->boolean()->defaultValue(0),
             'expiration'=> $this->integer(),
             'is_cicilan'=> $this->boolean(),
             'id_kategori_cicilan'=> $this->integer(),
@@ -231,7 +231,7 @@ class m190313_122126_init_db extends Migration
             'deskripsi'=> $this->string(),
             'dokumen'=> $this->string(),
             'harga'=> $this->bigInteger(),
-            'status'=> $this->string(),
+            'status'=> $this->boolean()->defaultValue(0),
             'created_at'=> $this->integer(),
             'updated_at'=> $this->integer(),
         ], $tableOptions);
