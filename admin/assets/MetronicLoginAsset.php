@@ -8,7 +8,7 @@ use yii\bootstrap4\BootstrapPluginAsset;
 use yii\web\AssetBundle;
 use yii\web\YiiAsset;
 
-class MetronicAsset extends AssetBundle
+class MetronicLoginAsset extends AssetBundle
 {
 
     public $basePath = '@webroot';
@@ -43,7 +43,7 @@ class MetronicAsset extends AssetBundle
         'vendors/vendors/flaticon/css/flaticon.css',
         'vendors/vendors/metronic/css/styles.css',
         'vendors/vendors/fontawesome5/css/all.min.css',
-        'demo/base/style.bundle.css'
+        'demo/base/style.bundle-default.css'
 
 
     ];
@@ -109,8 +109,8 @@ class MetronicAsset extends AssetBundle
         'vendors/es6-promise-polyfill/promise.min.js',
         'vendors/sweetalert2/dist/sweetalert2.min.js',
         'vendors/js/framework/components/plugins/base/sweetalert2.init.js',
-        'demo/base/scripts.bundle.js',
-        'app/js/dashboard.js'
+        'demo/base/scripts.bundle-default.js',
+        'snippets/custom/pages/user/login.js'
 
     ];
 
