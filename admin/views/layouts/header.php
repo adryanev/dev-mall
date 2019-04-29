@@ -1,3 +1,8 @@
+<?php
+
+use yii\bootstrap4\Html;
+
+?>
 <!-- BEGIN: Header -->
 <header id="m_header" class="m-grid__item    m-header " m-minimize-offset="200" m-minimize-mobile-offset="200">
     <div class="m-container m-container--fluid m-container--full-height">
@@ -8,7 +13,7 @@
                 <div class="m-stack m-stack--ver m-stack--general">
                     <div class="m-stack__item m-stack__item--middle m-brand__logo">
                         <a href="index.html" class="m-brand__logo-wrapper">
-                            <img alt="" src="assets/demo/demo7/media/img/logo/logo.png" />
+                            <?= Html::img('@web/demo/demo7/media/img/logo/logo.png')?>
                         </a>
                     </div>
                     <div class="m-stack__item m-stack__item--middle m-brand__tools">
@@ -428,7 +433,7 @@
                             <li class="m-nav__item m-topbar__user-profile  m-dropdown m-dropdown--medium m-dropdown--arrow  m-dropdown--align-right m-dropdown--mobile-full-width m-dropdown--skin-light" m-dropdown-toggle="click">
                                 <a href="#" class="m-nav__link m-dropdown__toggle">
 												<span class="m-topbar__userpic m--hide">
-													<img src="assets/app/media/img/users/user4.jpg" class="m--img-rounded m--marginless m--img-centered" alt="" />
+                                                    <?= Html::img('@web/app/media/img/users/user4.jpg',['class'=>'m--img-rounded m--marginless m--img-centered'])?>
 												</span>
                                     <span class="m-nav__link-icon m-topbar__usericon">
 													<span class="m-nav__link-icon-wrapper"><i class="flaticon-user-ok"></i></span>
@@ -441,7 +446,7 @@
                                         <div class="m-dropdown__header m--align-center">
                                             <div class="m-card-user m-card-user--skin-light">
                                                 <div class="m-card-user__pic">
-                                                    <img src="assets/app/media/img/users/user4.jpg" class="m--img-rounded m--marginless" alt="" />
+                                                    <?=Html::img('@web/app/media/img/users/user4.jpg',['class'=>'m--img-rounded m--marginless'])?>
                                                 </div>
                                                 <div class="m-card-user__details">
                                                     <span class="m-card-user__name m--font-weight-500">Mark Andre</span>
@@ -495,7 +500,11 @@
                                                     <li class="m-nav__separator m-nav__separator--fit">
                                                     </li>
                                                     <li class="m-nav__item">
-                                                        <a href="snippets/pages/user/login-1.html" class="btn m-btn--pill    btn-secondary m-btn m-btn--custom m-btn--label-brand m-btn--bolder">Logout</a>
+                                                        <?= Html::a(
+                                                            'Logout',
+                                                            ['/site/logout'],
+                                                            ['data-method' => 'post', 'class' => 'btn m-btn--pill    btn-secondary m-btn m-btn--custom m-btn--label-brand m-btn--bolder']
+                                                        ) ?>
                                                     </li>
                                                 </ul>
                                             </div>

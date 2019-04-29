@@ -4,32 +4,37 @@
 /* @var $form yii\bootstrap\ActiveForm */
 /* @var $model \common\models\LoginForm */
 
+use yii\bootstrap4\ActiveForm;
 use yii\helpers\Html;
-use yii\bootstrap\ActiveForm;
 
 $this->title = 'Login';
 $this->params['breadcrumbs'][] = $this->title;
+$usernameTemplate = "\n{input}\n{hint}\n{error}\n";
 ?>
-<div class="site-login">
-    <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>Please fill out the following fields to login:</p>
+<!-- begin:: Page -->
 
-    <div class="row">
-        <div class="col-lg-5">
-            <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
+        <div class="m-login__wrapper-2 m-portlet-full-height">
+            <div class="m-login__contanier">
+                <div class="m-login__signin">
+                    <div class="m-login__head">
+                        <h3 class="m-login__title">Login To Your Account</h3>
+                    </div>
+                    <?php $form = ActiveForm::begin(['id' => 'login-form','options' => ['class'=>'m-login__form m-form'],
+                        'fieldConfig' => ['template'=>$usernameTemplate,'options'=>['class'=>'form-group m-form__group']]]); ?>
 
-                <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
 
-                <?= $form->field($model, 'password')->passwordInput() ?>
+                    <?= $form->field($model, 'username')->textInput(['autofocus' => true,'class'=>'form-control m-input','placeholder'=>'Username']) ?>
 
-                <?= $form->field($model, 'rememberMe')->checkbox() ?>
+                    <?= $form->field($model, 'password')->passwordInput(['class'=>'form-control m-input','placeholder'=>'Password']) ?>
 
-                <div class="form-group">
-                    <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
+                    <?= $form->field($model, 'rememberMe',['options'=>['class'=>'row m-login__form-sub'],'labelOptions' => [ 'class' => 'm-checkbox m-checkbox--focus' ]])->checkbox(['template'=>'<div class="col m--align-left">{beginLabel}{input} {labelTitle}<span></span>{endLabel}{error}{hint}</div>']) ?>
+
+                    <div class="m-login__form-action">
+                        <?= Html::submitButton('Login', ['class' => 'btn btn-focus m-btn m-btn--pill m-btn--custom m-btn--air', 'name' => 'login-button']) ?>
+                    </div>
+
+                    <?php ActiveForm::end(); ?>
                 </div>
-
-            <?php ActiveForm::end(); ?>
+            </div>
         </div>
-    </div>
-</div>

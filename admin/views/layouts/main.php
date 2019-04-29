@@ -3,6 +3,7 @@
 /* @var $this \yii\web\View */
 /* @var $content string */
 
+use admin\assets\MetronicAsset;
 use admin\assets\YiiAsset;
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
@@ -67,7 +68,7 @@ m-brand--minimize m-footer--push m-aside--offcanvas-default">
 <!-- end::Scroll Top -->
 
 
-
+<?php $this->registerJsFile('@web/app/js/dashboard.js', ['depends'=> MetronicAsset::class])?>
 <?php $this->endBody() ?>
 </body>
 </html>

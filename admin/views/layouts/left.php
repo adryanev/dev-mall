@@ -1,3 +1,8 @@
+<?php
+
+use yii\bootstrap4\Html;
+
+?>
 <!-- BEGIN: Left Aside -->
 <button class="m-aside-left-close  m-aside-left-close--skin-light " id="m_aside_left_close_btn"><i class="la la-close"></i></button>
 <div id="m_aside_left" class="m-grid__item	m-aside-left  m-aside-left--skin-light ">
@@ -5,7 +10,7 @@
     <!-- BEGIN: Brand -->
     <div class="m-brand  m-brand--skin-light ">
         <a href="index.html" class="m-brand__logo">
-            <img alt="" src="assets/demo/demo7/media/img/logo/logo.png" />
+            <?=Html::img('@web/demo/demo7/media/img/logo/logo.png')?>
         </a>
     </div>
 
